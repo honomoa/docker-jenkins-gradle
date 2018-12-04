@@ -5,7 +5,7 @@ ARG GRADLE_VERSION=5.0
 ENV GRADLE_HOME /opt/gradle
 ENV GRADLE_VERSION=${GRADLE_VERSION}
 
-RUN apk --no-cache add sshpass openssh-client rsync bash git openssh \
+RUN apk --no-cache add sshpass openssh-client rsync bash git openssh curl \
     && set -o errexit -o nounset \
     && echo "Downloading Gradle" \
     && wget -qO gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
